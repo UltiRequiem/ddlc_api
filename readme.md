@@ -1,6 +1,14 @@
+<div align="center">
+  <img src="./assets/banner.png" />
+</div>
+
 # DDLC API
 
-## Deployment / Deployment
+[The DDLC API](https://rickandmortyapi.com) is a RESTful API based on the
+[Doki Doki Literature Club](https://ddlc.moe) Ga,e, The #1 Psychological Horror
+Experience.
+
+## Development
 
 1. Install [Poetry](https://python-poetry.org)
 
@@ -19,7 +27,7 @@ poetry install
 4. Start the process
 
 ```sh
-python -m ddlc_api
+FLASK_APP=main.py FLASK_ENV=development flask run
 ```
 
 ## License

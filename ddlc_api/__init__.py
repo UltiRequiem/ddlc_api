@@ -30,6 +30,3 @@ def poems():
 @app.route("/acts", methods=["GET"])
 def acts():
     return {"acts": []}
-
-
-app.run()
