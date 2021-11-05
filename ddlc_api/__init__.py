@@ -1,6 +1,7 @@
 import flask
 
 from .config import DEV, URL
+from .db import DB
 
 app = flask.Flask(__name__)
 
