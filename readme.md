@@ -4,9 +4,8 @@
 
 # DDLC API
 
-[The DDLC API](https://rickandmortyapi.com) is a RESTful API based on the
-[Doki Doki Literature Club](https://ddlc.moe) Ga,e, The #1 Psychological Horror
-Experience.
+A RESTful API based on the [Doki Doki Literature Club](https://ddlc.moe) Game,
+The #1 Psychological Horror Experience.
 
 ## Development
 
