@@ -7,17 +7,17 @@
 A RESTful API based on the [Doki Doki Literature Club](https://ddlc.moe) Game,
 The #1 Psychological Horror Experience.
 
-## Development
+## Development / Production
 
 1. Install [Poetry](https://python-poetry.org)
 
-2. Enter to the virtual environment:
+2. Create a virtual environment
 
 ```sh
 poetry shell
 ```
 
-3. Install dependencies:
+3. Install the dependencies
 
 ```sh
 poetry install
@@ -25,8 +25,16 @@ poetry install
 
 4. Start the process
 
+- Production
+
 ```sh
-FLASK_APP=main.py FLASK_ENV=development flask run
+uvicorn ddlc:app
+```
+
+- Development
+
+```sh
+ENV=dev uvicorn ddlc:app --reload
 ```
 
 ## License
