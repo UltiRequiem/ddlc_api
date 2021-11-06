@@ -1,5 +1,4 @@
 from fastapi import FastAPI, HTTPException
-from bson.json_util import dumps
 
 from .models import Character
 from .exceptions import CharacterNotFound
@@ -20,7 +19,7 @@ async def root():
 
 @app.post("/characters")
 async def create_character(character: Character):
-    DBService.new_character(character)
+    DBService.new_character(character.__dict__)
     return {"message": f"Character {character.name.capitalize()} added successfully."}
 
 
