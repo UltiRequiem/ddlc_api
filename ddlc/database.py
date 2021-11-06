@@ -8,7 +8,7 @@ from .exceptions import CharacterNotFound
 class DatabaseService:
     def __init__(self):
         client = pymongo.MongoClient(
-            f"mongodb+srv://{DB_USER}:{DB_PASSWORD}@{CLUSTER_NAME}.{SUBDOMAIN}.mongodb.net/{DB_NAME}?retryWrites=true&w=majority"
+            f"mongodb+srv://{DB_USER}:{DB_PASSWORD}@{CLUSTER_NAME}.{SUBDOMAIN}.mongodb.net/{DB_NAME}"
         )
         self.db = client[DB_NAME]
 
@@ -19,11 +19,14 @@ class DatabaseService:
         return list(self.get_collection("characters"))
 
     def get_character(self, name):
-        for character in self.get_collection("characters"):
+        for character in self.get_characters():
             if character["name"] == name:
                 return character
 
         raise CharacterNotFound()
+
+    def new_character(self, character):
+        self.db["characters"].insert_one(character)
 
 
 DBService = DatabaseService()

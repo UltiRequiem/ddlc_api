@@ -1,5 +1,7 @@
 from fastapi import FastAPI, HTTPException
+from bson.json_util import dumps
 
+from .models import Character
 from .exceptions import CharacterNotFound
 from .config import URL
 from .database import DBService
@@ -8,7 +10,7 @@ app = FastAPI()
 
 
 @app.get("/")
-def root():
+async def root():
     return {
         "characters": f"{URL}/characters",
         "poems": f"{URL}/poems",
@@ -16,13 +18,19 @@ def root():
     }
 
 
+@app.post("/characters")
+async def create_character(character: Character):
+    DBService.new_character(character)
+    return {"message": f"Character {character.name.capitalize()} added successfully."}
+
+
 @app.get("/characters")
-def characters():
+async def characters():
     return DBService.get_characters()
 
 
 @app.get("/characters/{character}")
-def specific_character(character: str):
+async def specific_character(character: str):
     try:
         return DBService.get_character(character)
     except CharacterNotFound:
@@ -32,10 +40,10 @@ def specific_character(character: str):
 
 
 @app.get("/poems")
-def poems():
+async def poems():
     return []
 
 
 @app.get("/acts")
-def acts():
+async def acts():
     return []
