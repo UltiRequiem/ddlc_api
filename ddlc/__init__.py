@@ -1,4 +1,6 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+
+from .exceptions import CharacterNotFound
 from .config import URL
 from .database import DBService
 
@@ -17,6 +19,16 @@ def root():
 @app.get("/characters")
 def characters():
     return DBService.get_characters()
+
+
+@app.get("/characters/{character}")
+def specific_character(character: str):
+    try:
+        return DBService.get_character(character)
+    except CharacterNotFound:
+        raise HTTPException(
+            status_code=404, detail=f'Character "{character}" not found.'
+        )
 
 
 @app.get("/poems")

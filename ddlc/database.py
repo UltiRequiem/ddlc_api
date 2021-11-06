@@ -2,6 +2,8 @@ import pymongo
 
 from .config import DB_PASSWORD, DB_USER, CLUSTER_NAME, SUBDOMAIN, DB_NAME
 
+from .exceptions import CharacterNotFound
+
 
 class DatabaseService:
     def __init__(self):
@@ -15,6 +17,13 @@ class DatabaseService:
 
     def get_characters(self):
         return list(self.get_collection("characters"))
+
+    def get_character(self, name):
+        for character in self.get_collection("characters"):
+            if character["name"] == name:
+                return character
+
+        raise CharacterNotFound()
 
 
 DBService = DatabaseService()

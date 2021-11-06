@@ -1,0 +1,2 @@
+class CharacterNotFound(BaseException):
+    pass
