@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from .config import URL
+from .database import DBService
 
 app = FastAPI()
 
@@ -15,7 +16,7 @@ def root():
 
 @app.get("/characters")
 def characters():
-    return []
+    return DBService.get_characters()
 
 
 @app.get("/poems")
