@@ -1,0 +1,12 @@
+{
+  "name": "monika",
+  "age": 18,
+  "born_date": "September 22nd",
+  "concept_height": "160 cm",
+  "gender": "Female",
+  "hair_color": "Coral Brown",
+  "eye_color": "Emerald Green",
+  "filename": "monika.chr",
+  "appears": ["Act 1", "Act 2", "Act 3", "Act 4"],
+  "voice_actor": "Jillian Ashcraft"
+}

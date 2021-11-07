@@ -11,7 +11,8 @@ class Character(BaseModel):
     hair_color: str
     eye_color: str
     filename: str
-    appears: Optional[list[str]] = None
+    appears: list[str]
+    voice_actor: Optional[str] = None
 
 
 Characters = list[Character]

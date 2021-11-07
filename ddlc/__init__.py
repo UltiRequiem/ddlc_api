@@ -19,7 +19,9 @@ async def root():
 @app.post("/characters")
 async def create_character(character: Character):
     DBService.new_character(character.__dict__)
-    return {"message": f"Character {character.name.capitalize()} added successfully."}
+    return {
+        "message": f"Character {character.name.capitalize()} added successfully.",
+    }
 
 
 @app.get("/characters")

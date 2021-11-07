@@ -1,0 +1,11 @@
+{
+  "name": "natsuki",
+  "age": 18,
+  "born_date": "December 10th",
+  "concept_height": "150 cm",
+  "gender": "Female",
+  "hair_color": "Pastel Pink",
+  "eye_color": "Pink",
+  "filename": "natsuki.chr",
+  "appears": ["Act 1", "Act 2", "Act 4"]
+}

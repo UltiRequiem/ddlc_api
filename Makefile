@@ -8,3 +8,6 @@ dev:
 
 start:
 	uvicorn ddlc:app
+
+fmt:
+	black .

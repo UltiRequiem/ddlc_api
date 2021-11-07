@@ -1,0 +1,11 @@
+{
+  "name": "yuri",
+  "age": 18,
+  "born_date": "December 10th",
+  "concept_height": "165 cm",
+  "gender": "Female",
+  "hair_color": "Dark Purple",
+  "eye_color": "Light Purple",
+  "filename": "yuri.chr",
+  "appears": ["Act 1", "Act 2", "Act 4"]
+}

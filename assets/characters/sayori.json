@@ -1,0 +1,11 @@
+{
+  "name": "sayori",
+  "age": 18,
+  "born_date": "April 13",
+  "concept_height": "157 cm",
+  "gender": "Female",
+  "hair_color": "Coral Pink",
+  "eye_color": "Sky Blue",
+  "filename": "sayori.chr",
+  "appears": ["Act 1", "Act 4"]
+}
