@@ -13,7 +13,6 @@ async def root():
     return {
         "characters": f"{URL}/characters",
         "poems": f"{URL}/poems",
-        "acts": f"{URL}/acts",
     }
 
 
@@ -40,9 +39,14 @@ async def specific_character(character: str):
 
 @app.get("/poems")
 async def poems():
-    return []
+    return {
+        "monika": f"{URL}/poems/monika",
+        "sayori": f"{URL}/poems/sayori",
+        "yuri": f"{URL}/poems/yuri",
+        "natsuki": f"{URL}/poems/natsuki",
+    }
 
 
-@app.get("/acts")
-async def acts():
-    return []
+@app.get("/poems/{character}")
+async def character_poem(character: str):
+    return {"TODO": "TODO"}
