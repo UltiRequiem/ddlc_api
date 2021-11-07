@@ -4,10 +4,10 @@
 
 # The Doki Doki Literature Club API
 
-[![CI](https://github.com/UltiRequiem/dllc_api/workflows/ci/badge.svg)]
+[![CI](https://github.com/UltiRequiem/ddlc_api/actions/workflows/ci.yml/badge.svg)](https://github.com/UltiRequiem/ddlc_api/actions/workflows/ci.yml)
 
-A RESTful API based on [Doki Doki Literature Club](https://ddlc.moe),
-The #1 Psychological Horror Experience.
+A RESTful API based on [Doki Doki Literature Club](https://ddlc.moe), The #1
+Psychological Horror Experience.
 
 This API is still in constant development so if you have any idea of a feature
 that you would like the api to have, open an issue or make a pull request.
