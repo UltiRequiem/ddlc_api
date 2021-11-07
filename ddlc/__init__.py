@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+import random
 
 from .models import Character
 from .exceptions import CharacterNotFound
@@ -11,7 +12,7 @@ app = FastAPI()
 @app.get("/")
 async def root():
     return {
-        "characters": f"{URL}/characters",
+        "characters": DBService.get_characters(),
         "poems": f"{URL}/poems",
     }
 
@@ -31,16 +32,6 @@ async def specific_character(character: str):
         )
 
 
-@app.get("/poems")
-async def poems():
-    return {
-        "monika": f"{URL}/poems/monika",
-        "sayori": f"{URL}/poems/sayori",
-        "yuri": f"{URL}/poems/yuri",
-        "natsuki": f"{URL}/poems/natsuki",
-    }
-
-
 @app.post("/characters")
 async def create_character(character: Character):
     if not DEV:
@@ -50,6 +41,16 @@ async def create_character(character: Character):
 
     return {
         "message": f"Character {character.name.capitalize()} added successfully.",
+    }
+
+
+@app.get("/poems")
+async def poems():
+    return {
+        "monika": f"{URL}/poems/monika",
+        "sayori": f"{URL}/poems/sayori",
+        "yuri": f"{URL}/poems/yuri",
+        "natsuki": f"{URL}/poems/natsuki",
     }
 
 
