@@ -13,7 +13,7 @@ The #1 Psychological Horror Experience.
 
 > https://ddlcapi.herokuapp.com
 
-Returns an object containing all the available endpoints.
+Returns an object containing the available endpoints.
 
 ```json
 {
@@ -110,4 +110,4 @@ ENV=dev uvicorn ddlc:app --reload
 
 This project is licensed under the [MIT License](./license).
 
-[Team Salvato IP Guidelines](http://teamsalvato.com/ip-guidelines).
+[Team Salvato Intellectual Property Guidelines](http://teamsalvato.com/ip-guidelines).
