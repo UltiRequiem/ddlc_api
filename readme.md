@@ -204,6 +204,8 @@ If you pass a character that doesn't exist you will receive:
 
 ### `GET /illustrations`
 
+> https://ddlcapi.herokuapp.com/illustrations
+
 An object, key is the character name and the value is a link with the illustration.
 
 <details>
@@ -219,20 +221,16 @@ An object, key is the character name and the value is a link with the illustrati
   ```
 </details>
 
-### `GET /illustrations`
+### `GET /illustrations/{character}.png`
 
+> https://ddlcapi.herokuapp.com/illustrations/natsuki.png
+
+The illustration of `{character}`.
 
 <details>
   <summary>Response</summary>
   
-  ```json
-  {
-    "yuri": "https://ddlcapi.herokuapp.com/illustrations/yuri.png",
-    "natsuki": "https://ddlcapi.herokuapp.com/illustrations/natsuki.png",
-    "sayori": "https://ddlcapi.herokuapp.com/illustrations/sayori.png",
-    "monika": "https://ddlcapi.herokuapp.com/illustrations/monika.png"
-  }
-  ```
+  ![Natsuki Image](https://ddlcapi.herokuapp.com/illustrations/natsuki.png)
 </details>
 
 ## Development / Production
