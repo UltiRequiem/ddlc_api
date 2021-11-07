@@ -7,6 +7,9 @@
 A RESTful API based on the [Doki Doki Literature Club](https://ddlc.moe) Game,
 The #1 Psychological Horror Experience.
 
+This API is still in constant development so if you have any idea of a feature
+that you would like the api to have, open an issue or make a pull request.
+
 ## Endpoints
 
 ### `GET /`
@@ -44,8 +47,8 @@ Returns an array of objects with the data of each character.
 ]
 ```
 
-It has the data of all the characters, I don't put it here all,
-because the readme would be huge.
+It has the data of all the characters, I don't put it here all, because the
+readme would be huge.
 
 ### `GET /characters/{character}`
 
