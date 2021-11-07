@@ -9,13 +9,6 @@ from .database import DBService
 app = FastAPI()
 
 
-app.mount(
-    "/illustrations",
-    StaticFiles(directory="assets/illustrations"),
-    name="illustrations",
-)
-
-
 @app.get("/")
 async def root():
     return {
@@ -45,7 +38,9 @@ async def create_character(character: Character):
         return {"message": "This endpoint is not available in production."}
 
     character_data = character.dict()
-    character_data.update({"illustration": f"{DEPLOY_URL}/illustrations/{character.name}.png"})
+    character_data.update(
+        {"illustration": f"{DEPLOY_URL}/illustrations/{character.name}.png"}
+    )
 
     DBService.new_character(character_data)
 
@@ -67,3 +62,20 @@ async def poems():
 @app.get("/poems/{character}")
 async def character_poem(character: str):
     return {"TODO": "TODO"}
+
+
+app.mount(
+    "/illustrations",
+    StaticFiles(directory="assets/illustrations"),
+    name="illustrations",
+)
+
+
+@app.get("/illustrations")
+async def illustrations():
+    return {
+        "yuri": f"{DEPLOY_URL}/illustrations/yuri.png",
+        "natsuki": f"{DEPLOY_URL}/illustrations/natsuki.png",
+        "sayori": f"{DEPLOY_URL}/illustrations/sayori.png",
+        "monika": f"{DEPLOY_URL}/illustrations/monika.png",
+    }

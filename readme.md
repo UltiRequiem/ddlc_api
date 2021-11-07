@@ -21,7 +21,7 @@ that you would like the api to have, open an issue or make a pull request.
 Returns an object containing the data of all the characters and poems.
 
 <details>
-  <summary>Click to expand</summary>
+  <summary>Response</summary>
 
 ```json
 {
@@ -92,11 +92,10 @@ Returns an object containing the data of all the characters and poems.
 Returns an array of objects with the data of each character.
 
 <details>
-  <summary>Click to expand!</summary>
+  <summary>Response</summary>
   
   ```json
-  {
-   "characters":[
+  [
       {
          "name":"yuri",
          "age":18,
@@ -165,9 +164,7 @@ Returns an array of objects with the data of each character.
          "voice_actor":null,
          "illustration":"https://ddlcapi.herokuapp.com/illustrations/sayori.png"
       }
-   ],
-   "poems":"https://ddlcapi.herokuapp.com/poems"
-  }
+   ]
   ```
 </details>
 
@@ -178,7 +175,7 @@ Returns an array of objects with the data of each character.
 Returns the data of an specific character.
 
 <details>
-  <summary>Example</summary>
+  <summary>Response</summary>
   
   ```json
   {
@@ -204,6 +201,39 @@ If you pass a character that doesn't exist you will receive:
 ```json
 { "detail": "Character \"lol\" not found." }
 ```
+
+### `GET /illustrations`
+
+An object, key is the character name and the value is a link with the illustration.
+
+<details>
+  <summary>Response</summary>
+  
+  ```json
+  {
+   "yuri": "https://ddlcapi.herokuapp.com/illustrations/yuri.png",
+   "natsuki": "https://ddlcapi.herokuapp.com/illustrations/natsuki.png",
+   "sayori": "https://ddlcapi.herokuapp.com/illustrations/sayori.png",
+   "monika": "https://ddlcapi.herokuapp.com/illustrations/monika.png"
+  }
+  ```
+</details>
+
+### `GET /illustrations`
+
+
+<details>
+  <summary>Response</summary>
+  
+  ```json
+  {
+    "yuri": "https://ddlcapi.herokuapp.com/illustrations/yuri.png",
+    "natsuki": "https://ddlcapi.herokuapp.com/illustrations/natsuki.png",
+    "sayori": "https://ddlcapi.herokuapp.com/illustrations/sayori.png",
+    "monika": "https://ddlcapi.herokuapp.com/illustrations/monika.png"
+  }
+  ```
+</details>
 
 ## Development / Production
 
