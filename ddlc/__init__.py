@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 
 from .models import Character
 from .exceptions import CharacterNotFound
-from .config import URL
+from .config import URL, DEV
 from .database import DBService
 
 app = FastAPI()
@@ -18,7 +18,11 @@ async def root():
 
 @app.post("/characters")
 async def create_character(character: Character):
+    if not DEV:
+        return {"message": "This endpoint is not available in production."}
+
     DBService.new_character(character.__dict__)
+
     return {
         "message": f"Character {character.name.capitalize()} added successfully.",
     }
