@@ -13,6 +13,8 @@ The #1 Psychological Horror Experience.
 
 > https://ddlcapi.herokuapp.com
 
+Returns an object containing all the available endpoints.
+
 ```json
 {
   "characters": "https://ddlcapi.herokuapp.com/characters",
@@ -24,6 +26,8 @@ The #1 Psychological Horror Experience.
 ### `GET /characters`
 
 > https://ddlcapi.herokuapp.com/characters
+
+Returns an array of objects with the data of each character.
 
 ```json
 [
@@ -45,6 +49,8 @@ The #1 Psychological Horror Experience.
 
 > https://ddlcapi.herokuapp.com/characters/monika
 
+Returns the data of an specific character.
+
 ```json
 {
   "name": "monika",
@@ -57,6 +63,14 @@ The #1 Psychological Horror Experience.
   "filename": "monika.chr",
   "appears": ["Act 1", "Act 2", "Act 3", "Act 4"]
 }
+```
+
+If you pass a character that doesn't exist you will receive:
+
+> https://ddlcapi.herokuapp.com/characters/lol
+
+```json
+{ "detail": "Character \"lol\" not found." }
 ```
 
 ## Development / Production
