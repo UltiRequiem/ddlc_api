@@ -45,23 +45,27 @@ Returns an array of objects with the data of each character.
 ]
 ```
 
+It has the data of all the characters, I don't put it here all,
+because the readme would be huge.
+
 ### `GET /characters/{character}`
 
-> https://ddlcapi.herokuapp.com/characters/monika
+> https://ddlcapi.herokuapp.com/characters/natsuki
 
 Returns the data of an specific character.
 
 ```json
 {
-  "name": "monika",
+  "name": "natsuki",
   "age": 18,
-  "born_date": "september 22nd",
-  "concept_height": "160 cm",
+  "born_date": "December 10th",
+  "concept_height": "150 cm",
   "gender": "Female",
-  "hair_color": "Coral Brown",
-  "eye_color": "Emerald Green",
-  "filename": "monika.chr",
-  "appears": ["Act 1", "Act 2", "Act 3", "Act 4"]
+  "hair_color": "Pastel Pink",
+  "eye_color": "Pink",
+  "filename": "natsuki.chr",
+  "appears": ["Act 1", "Act 2", "Act 4"],
+  "voice_actor": null
 }
 ```
 
@@ -106,3 +110,10 @@ ENV=dev uvicorn ddlc:app --reload
 ## License
 
 This project is licensed under the [MIT License](./license).
+
+This API does not serve official DDLC or DDLC Plus assets,
+and throughout the project only a [modified version of the promotion
+banner](./assets/banner.png) (I just trimmed it a little because it was too big),
+is used for the readme.
+
+[Team Salvato IP Guidelines](http://teamsalvato.com/ip-guidelines).
