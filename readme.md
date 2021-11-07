@@ -2,9 +2,11 @@
   <img src="./assets/banner.png" />
 </div>
 
-# DDLC API
+# The Doki Doki Literature Club API
 
-A RESTful API based on the [Doki Doki Literature Club](https://ddlc.moe) Game,
+[![CI](https://github.com/UltiRequiem/dllc_api/workflows/ci/badge.svg)]
+
+A RESTful API based on [Doki Doki Literature Club](https://ddlc.moe),
 The #1 Psychological Horror Experience.
 
 This API is still in constant development so if you have any idea of a feature
