@@ -20,17 +20,182 @@ that you would like the api to have, open an issue or make a pull request.
 
 Returns an object containing the data of all the characters and poems.
 
+<details>
+  <summary>Click to expand</summary>
+
+```json
+{
+  "characters": [
+    {
+      "name": "yuri",
+      "age": 18,
+      "born_date": "December 10th",
+      "concept_height": "165 cm",
+      "gender": "Female",
+      "hair_color": "Dark Purple",
+      "eye_color": "Light Purple",
+      "filename": "yuri.chr",
+      "appears": ["Act 1", "Act 2", "Act 4"],
+      "voice_actor": null,
+      "illustration": "https://ddlcapi.herokuapp.com/illustrations/yuri.png"
+    },
+    {
+      "name": "monika",
+      "age": 18,
+      "born_date": "September 22nd",
+      "concept_height": "160 cm",
+      "gender": "Female",
+      "hair_color": "Coral Brown",
+      "eye_color": "Emerald Green",
+      "filename": "monika.chr",
+      "appears": ["Act 1", "Act 2", "Act 3", "Act 4"],
+      "voice_actor": "Jillian Ashcraft",
+      "illustration": "https://ddlcapi.herokuapp.com/illustrations/monika.png"
+    },
+    {
+      "name": "natsuki",
+      "age": 18,
+      "born_date": "December 10th",
+      "concept_height": "150 cm",
+      "gender": "Female",
+      "hair_color": "Pastel Pink",
+      "eye_color": "Pink",
+      "filename": "natsuki.chr",
+      "appears": ["Act 1", "Act 2", "Act 4"],
+      "voice_actor": null,
+      "illustration": "https://ddlcapi.herokuapp.com/illustrations/natsuki.png"
+    },
+    {
+      "name": "sayori",
+      "age": 18,
+      "born_date": "April 13",
+      "concept_height": "157 cm",
+      "gender": "Female",
+      "hair_color": "Coral Pink",
+      "eye_color": "Sky Blue",
+      "filename": "sayori.chr",
+      "appears": ["Act 1", "Act 4"],
+      "voice_actor": null,
+      "illustration": "https://ddlcapi.herokuapp.com/illustrations/sayori.png"
+    }
+  ],
+  "poems": "https://ddlcapi.herokuapp.com/poems"
+}
+```
+
+</details>
+
 ### `GET /characters`
 
 > https://ddlcapi.herokuapp.com/characters
 
 Returns an array of objects with the data of each character.
 
+<details>
+  <summary>Click to expand!</summary>
+  
+  ```json
+  {
+   "characters":[
+      {
+         "name":"yuri",
+         "age":18,
+         "born_date":"December 10th",
+         "concept_height":"165 cm",
+         "gender":"Female",
+         "hair_color":"Dark Purple",
+         "eye_color":"Light Purple",
+         "filename":"yuri.chr",
+         "appears":[
+            "Act 1",
+            "Act 2",
+            "Act 4"
+         ],
+         "voice_actor":null,
+         "illustration":"https://ddlcapi.herokuapp.com/illustrations/yuri.png"
+      },
+      {
+         "name":"monika",
+         "age":18,
+         "born_date":"September 22nd",
+         "concept_height":"160 cm",
+         "gender":"Female",
+         "hair_color":"Coral Brown",
+         "eye_color":"Emerald Green",
+         "filename":"monika.chr",
+         "appears":[
+            "Act 1",
+            "Act 2",
+            "Act 3",
+            "Act 4"
+         ],
+         "voice_actor":"Jillian Ashcraft",
+         "illustration":"https://ddlcapi.herokuapp.com/illustrations/monika.png"
+      },
+      {
+         "name":"natsuki",
+         "age":18,
+         "born_date":"December 10th",
+         "concept_height":"150 cm",
+         "gender":"Female",
+         "hair_color":"Pastel Pink",
+         "eye_color":"Pink",
+         "filename":"natsuki.chr",
+         "appears":[
+            "Act 1",
+            "Act 2",
+            "Act 4"
+         ],
+         "voice_actor":null,
+         "illustration":"https://ddlcapi.herokuapp.com/illustrations/natsuki.png"
+      },
+      {
+         "name":"sayori",
+         "age":18,
+         "born_date":"April 13",
+         "concept_height":"157 cm",
+         "gender":"Female",
+         "hair_color":"Coral Pink",
+         "eye_color":"Sky Blue",
+         "filename":"sayori.chr",
+         "appears":[
+            "Act 1",
+            "Act 4"
+         ],
+         "voice_actor":null,
+         "illustration":"https://ddlcapi.herokuapp.com/illustrations/sayori.png"
+      }
+   ],
+   "poems":"https://ddlcapi.herokuapp.com/poems"
+  }
+  ```
+</details>
+
 ### `GET /characters/{character}`
 
-> https://ddlcapi.herokuapp.com/characters/natsuki
+> https://ddlcapi.herokuapp.com/characters/yuri
 
 Returns the data of an specific character.
+
+<details>
+  <summary>Example</summary>
+  
+  ```json
+  {
+    "name": "yuri",
+    "age": 18,
+    "born_date": "December 10th",
+    "concept_height": "165 cm",
+    "gender": "Female",
+    "hair_color": "Dark Purple",
+    "eye_color": "Light Purple",
+    "filename": "yuri.chr",
+    "appears": ["Act 1", "Act 2", "Act 4"],
+    "voice_actor": null,
+    "illustration": "https://ddlcapi.herokuapp.com/illustrations/yuri.png"
+  }
+  ```
+</details>
 
 If you pass a character that doesn't exist you will receive:
 
