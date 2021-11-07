@@ -12,7 +12,6 @@ class Character(BaseModel):
     eye_color: str
     filename: str
     appears: list[str]
-    illustration: str
     voice_actor: Optional[str] = None
 
 

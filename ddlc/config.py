@@ -5,7 +5,9 @@ dotenv.load_dotenv()
 
 DEV = os.environ.get("ENV") == "dev"
 
-URL = "http://localhost:8000" if DEV else "https://ddlcapi.herokuapp.com"
+DEPLOY_URL = "https://ddlcapi.herokuapp.com"
+
+URL = "http://localhost:8000" if DEV else DEPLOY_URL
 
 DB_USER, DB_PASSWORD, SUBDOMAIN, CLUSTER_NAME, DB_NAME = [
     os.environ.get(x)

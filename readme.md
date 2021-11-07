@@ -18,14 +18,7 @@ that you would like the api to have, open an issue or make a pull request.
 
 > https://ddlcapi.herokuapp.com
 
-Returns an object containing the available endpoints.
-
-```json
-{
-  "characters": "https://ddlcapi.herokuapp.com/characters",
-  "poems": "https://ddlcapi.herokuapp.com/poems"
-}
-```
+Returns an object containing the data of all the characters and poems.
 
 ### `GET /characters`
 
@@ -33,45 +26,11 @@ Returns an object containing the available endpoints.
 
 Returns an array of objects with the data of each character.
 
-```json
-[
-  {
-    "name": "monika",
-    "age": 18,
-    "born_date": "september 22nd",
-    "concept_height": "160 cm",
-    "gender": "Female",
-    "hair_color": "Coral Brown",
-    "eye_color": "Emerald Green",
-    "filename": "monika.chr",
-    "appears": ["Act 1", "Act 2", "Act 3", "Act 4"]
-  }
-]
-```
-
-It has the data of all the characters, I don't put it here all, because the
-readme would be huge.
-
 ### `GET /characters/{character}`
 
 > https://ddlcapi.herokuapp.com/characters/natsuki
 
 Returns the data of an specific character.
-
-```json
-{
-  "name": "natsuki",
-  "age": 18,
-  "born_date": "December 10th",
-  "concept_height": "150 cm",
-  "gender": "Female",
-  "hair_color": "Pastel Pink",
-  "eye_color": "Pink",
-  "filename": "natsuki.chr",
-  "appears": ["Act 1", "Act 2", "Act 4"],
-  "voice_actor": null
-}
-```
 
 If you pass a character that doesn't exist you will receive:
 

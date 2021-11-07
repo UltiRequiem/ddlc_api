@@ -18,6 +18,9 @@ class DatabaseService:
     def get_characters(self):
         return list(self.get_collection("characters"))
 
+    def get_by_name(self, name):
+        return self.get_character(name)
+
     def get_character(self, name):
         for character in self.get_characters():
             if character["name"] == name:
