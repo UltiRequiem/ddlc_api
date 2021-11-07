@@ -18,8 +18,7 @@ Returns an object containing all the available endpoints.
 ```json
 {
   "characters": "https://ddlcapi.herokuapp.com/characters",
-  "poems": "https://ddlcapi.herokuapp.com/poems",
-  "acts": "https://ddlcapi.herokuapp.com/acts"
+  "poems": "https://ddlcapi.herokuapp.com/poems"
 }
 ```
 
@@ -110,10 +109,5 @@ ENV=dev uvicorn ddlc:app --reload
 ## License
 
 This project is licensed under the [MIT License](./license).
-
-This API does not serve official DDLC or DDLC Plus assets,
-and throughout the project only a [modified version of the promotion
-banner](./assets/banner.png) (I just trimmed it a little because it was too big),
-is used for the readme.
 
 [Team Salvato IP Guidelines](http://teamsalvato.com/ip-guidelines).

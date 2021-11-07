@@ -16,18 +16,6 @@ async def root():
     }
 
 
-@app.post("/characters")
-async def create_character(character: Character):
-    if not DEV:
-        return {"message": "This endpoint is not available in production."}
-
-    DBService.new_character(character.__dict__)
-
-    return {
-        "message": f"Character {character.name.capitalize()} added successfully.",
-    }
-
-
 @app.get("/characters")
 async def characters():
     return DBService.get_characters()
@@ -50,6 +38,18 @@ async def poems():
         "sayori": f"{URL}/poems/sayori",
         "yuri": f"{URL}/poems/yuri",
         "natsuki": f"{URL}/poems/natsuki",
+    }
+
+
+@app.post("/characters")
+async def create_character(character: Character):
+    if not DEV:
+        return {"message": "This endpoint is not available in production."}
+
+    DBService.new_character(character.__dict__)
+
+    return {
+        "message": f"Character {character.name.capitalize()} added successfully.",
     }
 
 
