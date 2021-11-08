@@ -14,7 +14,7 @@ that you would like the api to have, open an issue or make a pull request.
 
 ## Endpoints
 
-If you want also see the [documentation generated automatically with swagger Ui](https://ddlcapi.herokuapp.com/docs).
+If you want also see the [documentation generated automatically by Swagger UI](https://ddlcapi.herokuapp.com/docs).
 
 ### `GET /`
 
