@@ -3,7 +3,7 @@ from fastapi.staticfiles import StaticFiles
 
 from .models import Character
 from .exceptions import CharacterNotFound
-from .config import URL, DEV, DEPLOY_URL
+from .config import DEV, DEPLOY_URL
 from .database import DBService
 
 app = FastAPI()
@@ -11,10 +11,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {
-        "characters": DBService.get_characters(),
-        "poems": f"{URL}/poems",
-    }
+    return {"characters": DBService.get_characters(), "poems": DBService.get_poems()}
 
 
 @app.get("/characters")
@@ -51,17 +48,12 @@ async def create_character(character: Character):
 
 @app.get("/poems")
 async def poems():
-    return {
-        "monika": f"{URL}/poems/monika",
-        "sayori": f"{URL}/poems/sayori",
-        "yuri": f"{URL}/poems/yuri",
-        "natsuki": f"{URL}/poems/natsuki",
-    }
+    return DBService.get_poems()
 
 
 @app.get("/poems/{character}")
 async def character_poem(character: str):
-    return {"TODO": "TODO"}
+    pass
 
 
 app.mount(

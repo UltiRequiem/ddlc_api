@@ -24,11 +24,13 @@ class Poem(BaseModel):
     title: str
     occasion: str
     body: str
-    translation: TranslatedPoem
+    translation: Optional[TranslatedPoem]
+
 
 class CharacterPoem(BaseModel):
-    character: Character
+    author: str
     poem: Poem
 
+Poems = list[CharacterPoem]
 
 Characters = list[Character]
