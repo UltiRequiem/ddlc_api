@@ -25,7 +25,7 @@ async def characters():
 @app.get("/characters/{character}")
 async def specific_character(character: str):
     try:
-        return DBService.get_character(character)
+        return DBService.get_character_by_name(character)
     except CharacterNotFound:
         raise HTTPException(
             status_code=404, detail=f'Character "{character}" not found.'

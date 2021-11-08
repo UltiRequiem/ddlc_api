@@ -15,4 +15,20 @@ class Character(BaseModel):
     voice_actor: Optional[str] = None
 
 
+class TranslatedPoem(BaseModel):
+    title: str
+    body: str
+
+
+class Poem(BaseModel):
+    title: str
+    occasion: str
+    body: str
+    translation: TranslatedPoem
+
+class CharacterPoem(BaseModel):
+    character: Character
+    poem: Poem
+
+
 Characters = list[Character]

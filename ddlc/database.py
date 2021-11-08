@@ -18,18 +18,15 @@ class DatabaseService:
     def get_characters(self):
         return list(self.get_collection("characters"))
 
-    def get_by_name(self, name):
-        return self.get_character(name)
-
-    def get_character(self, name):
+    def get_character_by_name(self, name):
         for character in self.get_characters():
-            if character["name"] == name:
+            if character.name == name:
                 return character
 
         raise CharacterNotFound()
 
     def new_character(self, character):
-        self.db["characters"].insert_one(character)
+        self.db.characters.insert_one(character)
 
 
 DBService = DatabaseService()

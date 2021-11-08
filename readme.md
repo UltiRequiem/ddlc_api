@@ -172,7 +172,7 @@ Returns an array of objects with the data of each character.
 
 > https://ddlcapi.herokuapp.com/characters/yuri
 
-Returns the data of an specific character.
+Returns an object with the data of an specific character.
 
 <details>
   <summary>Response</summary>
