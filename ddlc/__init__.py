@@ -62,14 +62,14 @@ def character_poem(author: str):
 
 
 @app.post("/poems")
-def create_poem(poems: CharacterPoemList):
+def create_poem(character_poems: CharacterPoemList):
     if not DEV:
         return {"message": "This endpoint is not available in production."}
 
-    DBService.new_poem(poems.dict())
+    DBService.new_poem(character_poems.dict())
 
     return {
-        "message": f"{poems.author.capitalize()} Poems added successfully.",
+        "message": f"{character_poems.author.capitalize()} Poems added successfully.",
     }
 
 
