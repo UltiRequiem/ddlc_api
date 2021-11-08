@@ -1,8 +1,7 @@
-from fastapi import FastAPI, HTTPException
-from fastapi.staticfiles import StaticFiles
+from fastapi import FastAPI, HTTPException, staticfiles
 
-from .models import Character
-from .exceptions import CharacterNotFound
+from .models import Character, CharacterPoemList
+from .exceptions import CharacterNotFound, PoemAuthorNotFound
 from .config import DEV, DEPLOY_URL
 from .database import DBService
 
@@ -47,18 +46,35 @@ async def create_character(character: Character):
 
 
 @app.get("/poems")
-async def poems():
+def poems():
     return DBService.get_poems()
 
 
-@app.get("/poems/{character}")
-async def character_poem(character: str):
-    pass
+@app.get("/poems/{author}")
+def character_poem(author: str):
+    try:
+        return DBService.get_poem_by_author(author)
+    except PoemAuthorNotFound:
+        raise HTTPException(
+            status_code=404, detail=f'Character "{author.capitalize()}" not found.'
+        )
+
+
+@app.post("/poems")
+def create_poem(poems: CharacterPoemList):
+    if not DEV:
+        return {"message": "This endpoint is not available in production."}
+
+    DBService.new_poem(poems.dict())
+
+    return {
+        "message": f"{poems.author.capitalize()} Poems added successfully.",
+    }
 
 
 app.mount(
     "/illustrations",
-    StaticFiles(directory="assets/illustrations"),
+    staticfiles.StaticFiles(directory="assets/illustrations"),
     name="illustrations",
 )
 

@@ -27,10 +27,11 @@ class Poem(BaseModel):
     translation: Optional[TranslatedPoem]
 
 
-class CharacterPoem(BaseModel):
+PoemList = list[Poem]
+
+
+class CharacterPoemList(BaseModel):
     author: str
-    poem: Poem
-
-Poems = list[CharacterPoem]
-
-Characters = list[Character]
+    act_1: PoemList
+    act_2: Optional[PoemList]
+    act_3: Optional[PoemList]

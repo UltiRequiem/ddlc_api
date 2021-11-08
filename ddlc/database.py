@@ -2,7 +2,6 @@ import pymongo
 
 from .config import DB_PASSWORD, DB_USER, CLUSTER_NAME, SUBDOMAIN, DB_NAME
 from .exceptions import CharacterNotFound, PoemAuthorNotFound
-from .models import Character, CharacterPoem, Poems
 
 
 class DatabaseService:
@@ -20,25 +19,26 @@ class DatabaseService:
 
     def get_character_by_name(self, name: str):
         for character in self.get_characters():
-            if character.name == name:
+            if character["name"] == name:
                 return character
 
         raise CharacterNotFound()
 
-    def new_character(self, character: Character):
+    def new_character(self, character):
         self.db.characters.insert_one(character)
 
-    def get_poems(self) -> Poems:
+    def get_poems(self):
         return list(self.get_collection("poems"))
 
-    def get_poem_by_author(self, name) -> CharacterPoem:
+    def get_poem_by_author(self, author):
+        print(self.get_poems())
         for poem in self.get_poems():
-            if poem.author == name:
+            if poem["author"] == author:
                 return poem
 
         raise PoemAuthorNotFound()
 
-    def new_poem(self, poem: CharacterPoem):
+    def new_poem(self, poem):
         self.db.poems.insert_one(poem)
 
 
