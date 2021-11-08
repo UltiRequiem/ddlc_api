@@ -34,6 +34,7 @@ async def create_character(character: Character):
         return {"message": "This endpoint is not available in production."}
 
     character_data = character.dict()
+
     character_data.update(
         {"illustration": f"{DEPLOY_URL}/illustrations/{character.name}.png"}
     )
