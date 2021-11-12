@@ -1,6 +1,7 @@
 from typing import Optional
 from pydantic import BaseModel
 
+
 class ConceptHeight(BaseModel):
     cm: int
     inches: str
@@ -27,6 +28,7 @@ class TranslatedPoem(BaseModel):
 class Poem(BaseModel):
     title: str
     occasion: str
+    day: Optional[int]
     body: str
     translation: Optional[TranslatedPoem]
 
