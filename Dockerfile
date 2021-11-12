@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["poetry", "run", "uvicorn",  "ddlc:app" ]
+CMD ["poetry", "run", "uvicorn",  "ddlc:app", "--host=0.0.0.0", "--port=8000" ]
