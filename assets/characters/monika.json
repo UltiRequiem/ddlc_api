@@ -1,8 +1,11 @@
 {
   "name": "monika",
   "age": 18,
-  "born_date": "September 22nd",
-  "concept_height": "160 cm",
+  "birthday": "September 22nd",
+  "concept_height": {
+    "cm": 160,
+    "inches": "5'3"
+  },
   "gender": "Female",
   "hair_color": "Coral Brown",
   "eye_color": "Emerald Green",

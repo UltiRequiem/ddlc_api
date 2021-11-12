@@ -1,8 +1,12 @@
 {
   "name": "natsuki",
   "age": 18,
-  "born_date": "December 10th",
-  "concept_height": "150 cm",
+  "birthday": null,
+  "concept_height": {
+    "cm": 150,
+    "inch": "4'11"
+  },
+  }
   "gender": "Female",
   "hair_color": "Pastel Pink",
   "eye_color": "Pink",

@@ -1,8 +1,11 @@
 {
   "name": "yuri",
   "age": 18,
-  "born_date": "December 10th",
-  "concept_height": "165 cm",
+  "birthday": null,
+  "concept_height": {
+    "cm": 165,
+    "inches": "5'5"
+  },
   "gender": "Female",
   "hair_color": "Dark Purple",
   "eye_color": "Light Purple",
