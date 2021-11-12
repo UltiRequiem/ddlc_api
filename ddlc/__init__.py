@@ -31,7 +31,7 @@ async def specific_character(character: str):
 @app.post("/characters")
 async def create_character(character: Character):
     if not DEV:
-        return {"message": "This endpoint is not available in production."}
+        return {"detail": "This endpoint is not available in production."}
 
     character_data = character.dict()
 
@@ -42,7 +42,7 @@ async def create_character(character: Character):
     DBService.new_character(character_data)
 
     return {
-        "message": f"Character {character.name.capitalize()} added successfully.",
+        "detail": f"Character {character.name.capitalize()} added successfully.",
     }
 
 
@@ -64,12 +64,12 @@ def character_poem(author: str):
 @app.post("/poems")
 def create_poem(character_poems: CharacterPoemList):
     if not DEV:
-        return {"message": "This endpoint is not available in production."}
+        return {"detail": "This endpoint is not available in production."}
 
     DBService.new_poem(character_poems.dict())
 
     return {
-        "message": f"{character_poems.author.capitalize()} Poems added successfully.",
+        "detail": f"{character_poems.author.capitalize()} Poems added successfully.",
     }
 
 
