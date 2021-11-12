@@ -19,7 +19,7 @@ class DatabaseService:
 
     def get_character_by_name(self, name: str):
         for character in self.get_characters():
-            if character["name"] == name:
+            if character["name"].lower() == name:
                 return character
 
         raise CharacterNotFound()
