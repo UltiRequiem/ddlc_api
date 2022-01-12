@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException, staticfiles
-from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.cors import CORSMiddleware
 
 from .models import Character, CharacterPoemList
 from .exceptions import CharacterNotFound, PoemAuthorNotFound
