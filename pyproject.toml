@@ -6,7 +6,7 @@ authors = ["Eliaz Bobadilla <eliaz.bobadilladev@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "3.9.7"
+python = "^3.9.7"
 pymongo = "^3.12.1"
 python-dotenv = "^0.19.1"
 dnspython = "^2.1.0"

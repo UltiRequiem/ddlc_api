@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, staticfiles
+from fastapi.middleware.cors import CORSMiddleware
 
 from .models import Character, CharacterPoemList
 from .exceptions import CharacterNotFound, PoemAuthorNotFound
@@ -6,6 +7,15 @@ from .config import DEV, DEPLOY_URL
 from .database import DBService
 
 app = FastAPI()
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
