@@ -6,7 +6,7 @@
 
 [![CI](https://github.com/UltiRequiem/ddlc_api/actions/workflows/ci.yml/badge.svg)](https://github.com/UltiRequiem/ddlc_api/actions/workflows/ci.yml)
 
-A RESTful API based on [Doki Doki Literature Club](https://ddlc.moe), The #1
+A REST API for the [Doki Doki Literature Club](https://ddlc.moe), The #1
 Psychological Horror Experience.
 
 ## Documentation
@@ -27,9 +27,9 @@ If you are using this API in your project make a pull request adding it here!
 
 - [FastAPI](https://fastapi.tiangolo.com)
 
-- [MongoDB](https://www.mongodb.com)
+- [MongoDB](https://mongodb.com)
 
-- [Docker](https://www.docker.com)
+- [Docker](https://docker.com)
 
 - [Python Poetry](https://python-poetry.org)
 
